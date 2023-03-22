@@ -1,0 +1,12 @@
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\bin\Debug\net7.0\ConsumoAlimentario.Models.deps.json
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\bin\Debug\net7.0\ConsumoAlimentario.Models.dll
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\bin\Debug\net7.0\ConsumoAlimentario.Models.pdb
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ConsumoAlimentario.Models.csproj.AssemblyReference.cache
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ConsumoAlimentario.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ConsumoAlimentario.Models.AssemblyInfoInputs.cache
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ConsumoAlimentario.Models.AssemblyInfo.cs
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ConsumoAlimentario.Models.csproj.CoreCompileInputs.cache
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ConsumoAlimentario.Models.dll
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\refint\ConsumoAlimentario.Models.dll
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ConsumoAlimentario.Models.pdb
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.Models\obj\Debug\net7.0\ref\ConsumoAlimentario.Models.dll

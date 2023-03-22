@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-6">
+            <h2 class="text-center text-uppercase">Lista de alimentos base</h2>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <a asp-action="Crear" class="btn btn-success mb-5">Crear Alimento</a>
+        </div>
+    </div>
+</div>
+<table id="tblAlimentos" class="table table-responsive table-bordered" style="width:100%;">
+    <thead>
+        <tr>
+            <th>Alimento</th>
+            <th>Cantidad en gr</th>
+            <th>Calorias</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+</table>
+@section Scripts{
+    <script src="~/js/alimento.js"></script>
+}
+

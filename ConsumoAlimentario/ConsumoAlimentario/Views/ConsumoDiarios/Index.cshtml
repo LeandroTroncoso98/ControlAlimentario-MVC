@@ -1,0 +1,29 @@
+﻿
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-4 border">
+            <h3 class="text-uppercase text-primary">Datos Del Usuario</h3>
+        </div>
+        <div class="col-8">
+            <h2 class="text-primary text-uppercase">Historial de días</h2>
+            <table id="tblConsumo" class="table table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Calorias totales</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4 m-3">
+        <a asp-controller="ConsumoDiarios" asp-action="ConsumoDelDia" class="btn btn-success"> Comenzar nuevo dia</a>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/consumoDiario.js"></script>
+}
