@@ -10,7 +10,10 @@ namespace ConsumoAlimentario.Models.ViewModel
 {
     public class ConsumoDiarioAlimentoVM
     {
-        public ConsumoDiario ConsumoDiarios { get; set; }
+        public ConsumoDiario ConsumoDiario { get; set; }
         public IEnumerable<Alimento> Alimentos { get; set; }
+        public IEnumerable<AlimentoCargado> AlimentoCargados { get; set; }
+        public AlimentoCargado AlimentoCargado { get; set; }
+
     }
 }

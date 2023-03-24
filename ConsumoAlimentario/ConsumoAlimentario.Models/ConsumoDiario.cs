@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace ConsumoAlimentario.Models
 {
@@ -27,5 +28,7 @@ namespace ConsumoAlimentario.Models
         public float CalcioTotal { get; set; }
         public float HierroTotal { get; set; }
         public List<AlimentoCargado> ListaAlimentos { get; set; }
+        [NotMapped]
+        public string FechaString { get;set; }
     }
 }

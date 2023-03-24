@@ -16,6 +16,7 @@ namespace ConsumoAlimentario.Models
         [ForeignKey("Alimento")]
         public int Alimento_Id { get; set; }
         public Alimento Alimento { get; set; }
+        [Required(ErrorMessage = "La cantidad es obligatoría.")]
         public float Cantidad { get; set; }
         public float Calorias { get; set; }
         public float Carbohidratos { get; set; }

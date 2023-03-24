@@ -13,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<IAlimentoRepository, AlimentoRepository>();
 builder.Services.AddScoped<IConsumoDiarioRepository, ConsumoDiarioRepository>();
+builder.Services.AddScoped<IAlimentoCargadoRepository, AlimentoCargadoRepository>();
 
 
 // Add services to the container.

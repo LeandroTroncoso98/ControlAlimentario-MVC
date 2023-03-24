@@ -1,5 +1,6 @@
 ﻿using ConsumoAlimentario.AccesoDatos.Repository.IRepository;
 using ConsumoAlimentario.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,14 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
         {
             bool existe = _context.Alimento.Any(c => c.Nombre.ToLower() == nombre.ToLower());
             return existe;
+        }
+        public IEnumerable<SelectListItem> GetListaAlimentos()
+        {
+            return _context.Alimento.Select(i => new SelectListItem()
+            {
+                Text = i.Nombre,
+                Value = i.Alimento_Id.ToString()
+            });
         }
     }
 }

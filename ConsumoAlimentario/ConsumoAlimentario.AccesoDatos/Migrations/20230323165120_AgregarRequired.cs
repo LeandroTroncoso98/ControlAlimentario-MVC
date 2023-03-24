@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ConsumoAlimentario.AccesoDatos.Migrations
 {
     /// <inheritdoc />
-    public partial class PrimeraSubida : Migration
+    public partial class AgregarRequired : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -68,7 +68,7 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
                 {
                     AlimentoCargado_Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Alimento_Id = table.Column<int>(type: "int", nullable: false),
                     Cantidad = table.Column<float>(type: "real", nullable: false),
                     Calorias = table.Column<float>(type: "real", nullable: false),
@@ -82,7 +82,8 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
                     VitaminaA = table.Column<float>(type: "real", nullable: false),
                     VitaminaC = table.Column<float>(type: "real", nullable: false),
                     Calcio = table.Column<float>(type: "real", nullable: false),
-                    Hierro = table.Column<float>(type: "real", nullable: false)
+                    Hierro = table.Column<float>(type: "real", nullable: false),
+                    ConsumoDiario_Id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,26 +94,8 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
                         principalTable: "Alimento",
                         principalColumn: "Alimento_Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ConsumoDiarioAlimento",
-                columns: table => new
-                {
-                    Alimento_Id = table.Column<int>(type: "int", nullable: false),
-                    ConsumoDiario_Id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ConsumoDiarioAlimento", x => new { x.ConsumoDiario_Id, x.Alimento_Id });
                     table.ForeignKey(
-                        name: "FK_ConsumoDiarioAlimento_AlimentoCargado_Alimento_Id",
-                        column: x => x.Alimento_Id,
-                        principalTable: "AlimentoCargado",
-                        principalColumn: "AlimentoCargado_Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ConsumoDiarioAlimento_ConsumoDiario_ConsumoDiario_Id",
+                        name: "FK_AlimentoCargado_ConsumoDiario_ConsumoDiario_Id",
                         column: x => x.ConsumoDiario_Id,
                         principalTable: "ConsumoDiario",
                         principalColumn: "ConsumoDiario_Id",
@@ -125,25 +108,22 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
                 column: "Alimento_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ConsumoDiarioAlimento_Alimento_Id",
-                table: "ConsumoDiarioAlimento",
-                column: "Alimento_Id");
+                name: "IX_AlimentoCargado_ConsumoDiario_Id",
+                table: "AlimentoCargado",
+                column: "ConsumoDiario_Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ConsumoDiarioAlimento");
-
-            migrationBuilder.DropTable(
                 name: "AlimentoCargado");
 
             migrationBuilder.DropTable(
-                name: "ConsumoDiario");
+                name: "Alimento");
 
             migrationBuilder.DropTable(
-                name: "Alimento");
+                name: "ConsumoDiario");
         }
     }
 }

@@ -279,4 +279,3 @@ C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\Control
 C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
-C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario\obj\Debug\net7.0\ConsumoAlimentario.MvcApplicationPartsAssemblyInfo.cs

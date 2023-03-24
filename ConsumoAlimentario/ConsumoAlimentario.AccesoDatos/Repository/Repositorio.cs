@@ -38,7 +38,7 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
             return dbset.Find(id);
         }
 
-        public IEnumerable<C> GetAll()
+        public virtual IEnumerable<C> GetAll()
         {
             return dbset.ToList();
         }

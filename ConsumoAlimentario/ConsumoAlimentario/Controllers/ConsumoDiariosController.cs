@@ -2,6 +2,7 @@
 using ConsumoAlimentario.Models;
 using ConsumoAlimentario.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Packaging.Signing;
 
 namespace ConsumoAlimentario.Controllers
 {
@@ -44,11 +45,10 @@ namespace ConsumoAlimentario.Controllers
         {
             ConsumoDiarioAlimentoVM consumoDiarioAlimentoVM = new ConsumoDiarioAlimentoVM()
             {
-                ConsumoDiarios = _consumoDiarioRepository.Get(id),
+                ConsumoDiario = _consumoDiarioRepository.Get(id),
                 Alimentos = _alimentoRepository.GetAll()
             };
             return View(consumoDiarioAlimentoVM);
         }
-
     }
 }

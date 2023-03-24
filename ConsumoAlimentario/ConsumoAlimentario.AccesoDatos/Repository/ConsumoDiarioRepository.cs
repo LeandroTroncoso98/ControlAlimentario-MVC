@@ -19,7 +19,15 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
         {
             return _context.ConsumoDiario.Any(c => c.Fecha == fecha);   
         }
-
+        public override IEnumerable<ConsumoDiario> GetAll()
+        {
+            IEnumerable<ConsumoDiario> lista = _context.ConsumoDiario.ToList();
+            foreach(var item in lista)
+            {
+                item.FechaString = item.Fecha.ToString("d");
+            }
+            return lista;
+        }
         public ConsumoDiario GetForDate(DateTime fecha)
         {
             var consumoDiario = _context.ConsumoDiario.FirstOrDefault(c => c.Fecha == fecha);

@@ -13,7 +13,7 @@ function cargarDatatable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "fecha", "width": "20%" },
+            { "data": "fechaString", "width": "20%" },
             { "data": "caloriasTotales", "width": "20%" },
             {
                 "data": "consumoDiario_Id",

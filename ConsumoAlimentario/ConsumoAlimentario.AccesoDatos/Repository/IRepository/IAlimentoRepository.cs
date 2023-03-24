@@ -1,4 +1,5 @@
 ﻿using ConsumoAlimentario.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace ConsumoAlimentario.AccesoDatos.Repository.IRepository
     {
         void Editar(Alimento entity);
         bool ExisteAlimento(string nombre);
+        IEnumerable<SelectListItem> GetListaAlimentos(); 
     }
 }
