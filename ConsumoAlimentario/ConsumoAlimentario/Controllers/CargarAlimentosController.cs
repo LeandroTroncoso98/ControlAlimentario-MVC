@@ -19,13 +19,46 @@ namespace ConsumoAlimentario.Controllers
 
         public IActionResult Cargar(int id)
         {
+
             ConsumoDiarioAlimentoVM consumoDiarioAlimentoVM = new ConsumoDiarioAlimentoVM()
             {
-                Alimentos = _alimentoRepository.GetAll(),
+                Alimentos = _alimentoRepository.GetListaAlimentos(),
                 ConsumoDiario = _consumoDiarioRepository.Get(id)
             };
+            if (consumoDiarioAlimentoVM.ConsumoDiario == null)
+                return NotFound();
+            ViewBag.Data = id;
             return View(consumoDiarioAlimentoVM);
         }
-      
+
+        [HttpPost]
+        public IActionResult Cargar(ConsumoDiarioAlimentoVM consumoDiarioAlimentoVM)
+        {
+            if (ModelState.IsValid)
+            {
+                var alimento = _alimentoRepository.Get(consumoDiarioAlimentoVM.AlimentoCargado.Alimento_Id);
+                var alimentoCargado = _alimentoCargadoRepository.CalcularAlimentoCargado(alimento, consumoDiarioAlimentoVM.AlimentoCargado.Cantidad, consumoDiarioAlimentoVM.AlimentoCargado.ConsumoDiario_Id);
+                _alimentoCargadoRepository.Crear(alimentoCargado);
+                _alimentoCargadoRepository.Save();
+                _consumoDiarioRepository.AgregarAlimentoCargado(alimentoCargado.ConsumoDiario_Id, alimentoCargado);
+                _consumoDiarioRepository.Save();
+                return RedirectToAction("AdministrarConsumoDiario", "ConsumoDiarios", new { id = alimentoCargado.ConsumoDiario_Id });
+            }
+            consumoDiarioAlimentoVM.Alimentos = _alimentoRepository.GetListaAlimentos();
+            return View(consumoDiarioAlimentoVM);
+        }
+        [HttpGet]
+        public IActionResult EliminarAlimentoCargado(int id)
+        {
+            var alimento = _alimentoCargadoRepository.Get(id);
+            if (alimento == null)
+                return NotFound();
+            var alimentoAQuitar = alimento;
+            _alimentoCargadoRepository.Eliminar(alimento);
+            _alimentoCargadoRepository.Save();
+            _consumoDiarioRepository.QuitarAlimentoCargado(alimentoAQuitar.ConsumoDiario_Id, alimentoAQuitar);
+            return RedirectToAction("AdministrarConsumoDiario", "ConsumoDiarios", new { id = alimento.Alimento_Id });
+        }
+
     }
 }

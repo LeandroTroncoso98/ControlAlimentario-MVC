@@ -36,6 +36,14 @@
                             <th>Cantidad</th>
                             <th>Quitar</th>
                         </tr>
+                        @foreach(var item in @Model.ConsumoDiario.ListaAlimentos)
+                        {
+                            <tr>
+                                <td>@item.Nombre</td>
+                                <td>@item.Cantidad Gr.</td>
+                                <td><a asp-action="EliminarAlimentoCargado" asp-controller="CargarAlimentos" asp-route-id="@item.AlimentoCargado_Id" class="btn btn-danger form-control"> <i class="bi bi-trash3-fill"></i></a></td>
+                            </tr>
+                        }
                     </table>
                 </div>
                 @if (Model.ConsumoDiario.ListaAlimentos == null)
@@ -50,7 +58,6 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input id="Cantidad" />
                     <a href="@Url.Action("Cargar", "CargarAlimentos", new { id = Model.ConsumoDiario.ConsumoDiario_Id})" class="btn btn-outline-success" role="button">Cargar alimento</a>
                 </div>
             </div>

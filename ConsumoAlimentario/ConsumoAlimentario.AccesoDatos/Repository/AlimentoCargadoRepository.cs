@@ -45,5 +45,10 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
             float resultado = (cantidadPeso * valorBase) / cantidadBase;
             return resultado;
         }
+        public List<AlimentoCargado> GetListAlimentoCargadoFromId(int id)
+        {
+            List<AlimentoCargado> lista = _context.AlimentoCargado.Where(m=> m.ConsumoDiario_Id == id).ToList();
+            return lista;
+        }
     }
 }

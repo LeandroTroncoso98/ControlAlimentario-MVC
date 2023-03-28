@@ -37,7 +37,6 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
         {
             var consumoDiario = _context.ConsumoDiario.FirstOrDefault(c => c.ConsumoDiario_Id == consumoDiarioId);
             consumoDiario.ListaAlimentos.Add(alimento);
-            ResetNutrientes(consumoDiario);
             foreach(var item in consumoDiario.ListaAlimentos)
             {
                 consumoDiario.CaloriasTotales += item.Calorias;
@@ -53,27 +52,31 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
                 consumoDiario.CalcioTotal += item.Calcio;
                 consumoDiario.HierroTotal += item.Hierro;
             }
-
         }
-
-        private void ResetNutrientes(ConsumoDiario consumo)
+        public void QuitarAlimentoCargado(int consumoDiairoId,AlimentoCargado alimento)
         {
-            consumo.CaloriasTotales = 0;
-            consumo.CarbohidratosTotales = 0;
-            consumo.ProteinasTotales = 0;
-            consumo.GrasasTotales = 0;
-            consumo.SodioTotal = 0;
-            consumo.PotasioTotal = 0;
-            consumo.FibrasTotales = 0;
-            consumo.AzucarTotal = 0;
-            consumo.VitaminaATotal = 0;
-            consumo.VitaminaCTotal = 0;
-            consumo.CalcioTotal = 0;
-            consumo.HierroTotal = 0;
+            var consumoDiario = _context.ConsumoDiario.FirstOrDefault(m => m.ConsumoDiario_Id == consumoDiairoId);
+            consumoDiario.ListaAlimentos.Remove(alimento);
+            consumoDiario.CaloriasTotales -= alimento.Calorias;
+            consumoDiario.CarbohidratosTotales -= alimento.Carbohidratos;
+            consumoDiario.ProteinasTotales -= alimento.Proteina;
+            consumoDiario.GrasasTotales -= alimento.GrasasTotales;
+            consumoDiario.SodioTotal -= alimento.Sodio;
+            consumoDiario.PotasioTotal -= alimento.Potasio;
+            consumoDiario.FibrasTotales -= alimento.Fibra;
+            consumoDiario.AzucarTotal -= alimento.Azucar;
+            consumoDiario.VitaminaATotal -= alimento.VitaminaA;
+            consumoDiario.VitaminaCTotal -= alimento.VitaminaC;
+            consumoDiario.CalcioTotal -= alimento.Calcio;
+            consumoDiario.HierroTotal -= alimento.Hierro;
         }
+
+
+        
         public override void Crear(ConsumoDiario entity)
         {
             _context.ConsumoDiario.Add(entity);
         }
+        
     }
 }

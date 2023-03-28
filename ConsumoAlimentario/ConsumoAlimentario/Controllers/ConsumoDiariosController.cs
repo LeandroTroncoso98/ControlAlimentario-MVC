@@ -3,17 +3,18 @@ using ConsumoAlimentario.Models;
 using ConsumoAlimentario.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Packaging.Signing;
+using System.Diagnostics.Contracts;
 
 namespace ConsumoAlimentario.Controllers
 {
     public class ConsumoDiariosController : Controller
     {
         private readonly IConsumoDiarioRepository _consumoDiarioRepository;
-        private readonly IAlimentoRepository _alimentoRepository;
-        public ConsumoDiariosController(IConsumoDiarioRepository consumoDiarioRepository, IAlimentoRepository alimentoRepository)
+        private readonly IAlimentoCargadoRepository _alimentoCargadoRepository;
+        public ConsumoDiariosController(IConsumoDiarioRepository consumoDiarioRepository, IAlimentoCargadoRepository alimentoCargadoRepository)
         {
             _consumoDiarioRepository = consumoDiarioRepository;
-            _alimentoRepository = alimentoRepository;
+            _alimentoCargadoRepository= alimentoCargadoRepository;
             
         }
 
@@ -45,10 +46,13 @@ namespace ConsumoAlimentario.Controllers
         {
             ConsumoDiarioAlimentoVM consumoDiarioAlimentoVM = new ConsumoDiarioAlimentoVM()
             {
-                ConsumoDiario = _consumoDiarioRepository.Get(id),
-                Alimentos = _alimentoRepository.GetAll()
+                ConsumoDiario = _consumoDiarioRepository.Get(id)
             };
+            if (consumoDiarioAlimentoVM.ConsumoDiario == null)
+                return NotFound();
+            consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos = _alimentoCargadoRepository.GetListAlimentoCargadoFromId(id);
             return View(consumoDiarioAlimentoVM);
         }
+        
     }
 }
