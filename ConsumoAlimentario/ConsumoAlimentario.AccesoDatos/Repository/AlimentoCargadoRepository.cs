@@ -16,7 +16,7 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
             _context = context;
         }
 
-        public AlimentoCargado CalcularAlimentoCargado(Alimento alimento, float cantidad,int idConsumo)
+        public AlimentoCargado CalcularAlimentoCargado(Alimento alimento, double cantidad,int idConsumo)
         {
             AlimentoCargado alimentoCargado = new AlimentoCargado
             {
@@ -40,10 +40,10 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
             };
             return alimentoCargado;
         }
-        private float Calcular(float cantidadPeso, float cantidadBase, float valorBase)
+        private double Calcular(double cantidadPeso, double cantidadBase, double valorBase)
         {
-            float resultado = (cantidadPeso * valorBase) / cantidadBase;
-            return resultado;
+            double resultado = (cantidadPeso * valorBase) / cantidadBase;
+            return Math.Round(resultado,2);
         }
         public List<AlimentoCargado> GetListAlimentoCargadoFromId(int id)
         {

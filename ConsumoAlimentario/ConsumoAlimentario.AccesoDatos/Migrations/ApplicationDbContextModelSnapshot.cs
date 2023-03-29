@@ -30,49 +30,49 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Alimento_Id"));
 
-                    b.Property<float>("Azucar")
-                        .HasColumnType("real");
+                    b.Property<double>("Azucar")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Calcio")
-                        .HasColumnType("real");
+                    b.Property<double>("Calcio")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Calorias")
-                        .HasColumnType("real");
+                    b.Property<double>("Calorias")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Cantidad")
-                        .HasColumnType("real");
+                    b.Property<double>("Cantidad")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Carbohidratos")
-                        .HasColumnType("real");
+                    b.Property<double>("Carbohidratos")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Fibra")
-                        .HasColumnType("real");
+                    b.Property<double>("Fibra")
+                        .HasColumnType("float");
 
-                    b.Property<float>("GrasasTotales")
-                        .HasColumnType("real");
+                    b.Property<double>("GrasasTotales")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Hierro")
-                        .HasColumnType("real");
+                    b.Property<double>("Hierro")
+                        .HasColumnType("float");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
 
-                    b.Property<float>("Potasio")
-                        .HasColumnType("real");
+                    b.Property<double>("Potasio")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Proteina")
-                        .HasColumnType("real");
+                    b.Property<double>("Proteina")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Sodio")
-                        .HasColumnType("real");
+                    b.Property<double>("Sodio")
+                        .HasColumnType("float");
 
-                    b.Property<float>("VitaminaA")
-                        .HasColumnType("real");
+                    b.Property<double>("VitaminaA")
+                        .HasColumnType("float");
 
-                    b.Property<float>("VitaminaC")
-                        .HasColumnType("real");
+                    b.Property<double>("VitaminaC")
+                        .HasColumnType("float");
 
                     b.HasKey("Alimento_Id");
 
@@ -90,50 +90,50 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
                     b.Property<int>("Alimento_Id")
                         .HasColumnType("int");
 
-                    b.Property<float>("Azucar")
-                        .HasColumnType("real");
+                    b.Property<double>("Azucar")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Calcio")
-                        .HasColumnType("real");
+                    b.Property<double>("Calcio")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Calorias")
-                        .HasColumnType("real");
+                    b.Property<double>("Calorias")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Cantidad")
-                        .HasColumnType("real");
+                    b.Property<double>("Cantidad")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Carbohidratos")
-                        .HasColumnType("real");
+                    b.Property<double>("Carbohidratos")
+                        .HasColumnType("float");
 
                     b.Property<int>("ConsumoDiario_Id")
                         .HasColumnType("int");
 
-                    b.Property<float>("Fibra")
-                        .HasColumnType("real");
+                    b.Property<double>("Fibra")
+                        .HasColumnType("float");
 
-                    b.Property<float>("GrasasTotales")
-                        .HasColumnType("real");
+                    b.Property<double>("GrasasTotales")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Hierro")
-                        .HasColumnType("real");
+                    b.Property<double>("Hierro")
+                        .HasColumnType("float");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Potasio")
-                        .HasColumnType("real");
+                    b.Property<double>("Potasio")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Proteina")
-                        .HasColumnType("real");
+                    b.Property<double>("Proteina")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Sodio")
-                        .HasColumnType("real");
+                    b.Property<double>("Sodio")
+                        .HasColumnType("float");
 
-                    b.Property<float>("VitaminaA")
-                        .HasColumnType("real");
+                    b.Property<double>("VitaminaA")
+                        .HasColumnType("float");
 
-                    b.Property<float>("VitaminaC")
-                        .HasColumnType("real");
+                    b.Property<double>("VitaminaC")
+                        .HasColumnType("float");
 
                     b.HasKey("AlimentoCargado_Id");
 
@@ -152,44 +152,44 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ConsumoDiario_Id"));
 
-                    b.Property<float>("AzucarTotal")
-                        .HasColumnType("real");
+                    b.Property<double>("AzucarTotal")
+                        .HasColumnType("float");
 
-                    b.Property<float>("CalcioTotal")
-                        .HasColumnType("real");
+                    b.Property<double>("CalcioTotal")
+                        .HasColumnType("float");
 
-                    b.Property<float>("CaloriasTotales")
-                        .HasColumnType("real");
+                    b.Property<double>("CaloriasTotales")
+                        .HasColumnType("float");
 
-                    b.Property<float>("CarbohidratosTotales")
-                        .HasColumnType("real");
+                    b.Property<double>("CarbohidratosTotales")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("Date");
 
-                    b.Property<float>("FibrasTotales")
-                        .HasColumnType("real");
+                    b.Property<double>("FibrasTotales")
+                        .HasColumnType("float");
 
-                    b.Property<float>("GrasasTotales")
-                        .HasColumnType("real");
+                    b.Property<double>("GrasasTotales")
+                        .HasColumnType("float");
 
-                    b.Property<float>("HierroTotal")
-                        .HasColumnType("real");
+                    b.Property<double>("HierroTotal")
+                        .HasColumnType("float");
 
-                    b.Property<float>("PotasioTotal")
-                        .HasColumnType("real");
+                    b.Property<double>("PotasioTotal")
+                        .HasColumnType("float");
 
-                    b.Property<float>("ProteinasTotales")
-                        .HasColumnType("real");
+                    b.Property<double>("ProteinasTotales")
+                        .HasColumnType("float");
 
-                    b.Property<float>("SodioTotal")
-                        .HasColumnType("real");
+                    b.Property<double>("SodioTotal")
+                        .HasColumnType("float");
 
-                    b.Property<float>("VitaminaATotal")
-                        .HasColumnType("real");
+                    b.Property<double>("VitaminaATotal")
+                        .HasColumnType("float");
 
-                    b.Property<float>("VitaminaCTotal")
-                        .HasColumnType("real");
+                    b.Property<double>("VitaminaCTotal")
+                        .HasColumnType("float");
 
                     b.HasKey("ConsumoDiario_Id");
 

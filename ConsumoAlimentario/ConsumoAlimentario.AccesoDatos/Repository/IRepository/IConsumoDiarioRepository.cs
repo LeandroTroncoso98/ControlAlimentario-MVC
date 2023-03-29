@@ -11,7 +11,6 @@ namespace ConsumoAlimentario.AccesoDatos.Repository.IRepository
     {
         bool Existe(DateTime fecha);
         ConsumoDiario GetForDate(DateTime fecha);
-        void AgregarAlimentoCargado(int consumoDiarioId, AlimentoCargado alimento);
-        void QuitarAlimentoCargado(int consumoDiairoId, AlimentoCargado alimento);
+        void ActulizarConsumoDiario(int id);
     }
 }

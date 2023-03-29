@@ -15,28 +15,28 @@ namespace ConsumoAlimentario.Models
         [StringLength(70, ErrorMessage = "El nombre debe poseer de 2 hasta 70 caracteres.", MinimumLength = 2)]
         public string Nombre { get; set; }
         [Required(ErrorMessage = "Debe ingresar las calorías.")]
-        public float Calorias { get; set; }
+        public double Calorias { get; set; }
         [Required(ErrorMessage = "Debe ingresar los carbohidratos.")]
-        public float Carbohidratos { get; set; }
+        public double Carbohidratos { get; set; }
         [Required(ErrorMessage = "Debe ingresar las proteínas.")]
-        public float Proteina { get; set; }
+        public double Proteina { get; set; }
         [Required(ErrorMessage = "Debe ingresar las grasas totales.")]
         [Display(Name = "Grasas totales")]
-        public float GrasasTotales { get; set; }
-        public float Sodio { get; set; }
-        public float Potasio { get; set; }
+        public double GrasasTotales { get; set; }
+        public double Sodio { get; set; }
+        public double Potasio { get; set; }
 
-        public float Fibra { get; set; }
-        public float Azucar { get; set; }
+        public double Fibra { get; set; }
+        public double Azucar { get; set; }
         [Display(Name = "Vitamina A")]
-        public float VitaminaA { get; set; }
+        public double VitaminaA { get; set; }
         [Display(Name = "Vitamina C")]
-        public float VitaminaC { get; set; }
-        public float Calcio { get; set; }
-        public float Hierro { get; set; }
+        public double VitaminaC { get; set; }
+        public double Calcio { get; set; }
+        public double Hierro { get; set; }
         [Required(ErrorMessage = "Debe ingresar una cantidad.")]
         [Display(Name = "Cantidad en gramos")]
-        public float Cantidad { get; set; }
+        public double Cantidad { get; set; }
         public List<AlimentoCargado> AlimentoCargado { get; set; }
     }
 }

@@ -15,18 +15,18 @@ namespace ConsumoAlimentario.Models
         public int ConsumoDiario_Id { get; set; }
         [Column(TypeName = "Date")]
         public DateTime Fecha { get; set; }
-        public float CaloriasTotales { get; set; }
-        public float CarbohidratosTotales { get; set; }
-        public float ProteinasTotales { get; set; }
-        public float GrasasTotales { get; set; }
-        public float SodioTotal { get; set; }
-        public float PotasioTotal { get; set; }
-        public float FibrasTotales { get; set; }
-        public float AzucarTotal { get; set; }
-        public float VitaminaATotal { get; set; }
-        public float VitaminaCTotal { get; set; }
-        public float CalcioTotal { get; set; }
-        public float HierroTotal { get; set; }
+        public double CaloriasTotales { get; set; }
+        public double CarbohidratosTotales { get; set; }
+        public double ProteinasTotales { get; set; }
+        public double GrasasTotales { get; set; }
+        public double SodioTotal { get; set; }
+        public double PotasioTotal { get; set; }
+        public double FibrasTotales { get; set; }
+        public double AzucarTotal { get; set; }
+        public double VitaminaATotal { get; set; }
+        public double VitaminaCTotal { get; set; }
+        public double CalcioTotal { get; set; }
+        public double HierroTotal { get; set; }
         public List<AlimentoCargado> ListaAlimentos { get; set; }
         [NotMapped]
         public string FechaString { get;set; }

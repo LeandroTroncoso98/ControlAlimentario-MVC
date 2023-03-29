@@ -17,19 +17,19 @@ namespace ConsumoAlimentario.Models
         public int Alimento_Id { get; set; }
         public Alimento Alimento { get; set; }
         [Required(ErrorMessage = "La cantidad es obligatoría.")]
-        public float Cantidad { get; set; }
-        public float Calorias { get; set; }
-        public float Carbohidratos { get; set; }
-        public float Proteina { get; set; }
-        public float GrasasTotales { get; set; }
-        public float Sodio { get; set; }
-        public float Potasio { get; set; }
-        public float Fibra { get; set; }
-        public float Azucar { get; set; }
-        public float VitaminaA { get; set; }
-        public float VitaminaC { get; set; }
-        public float Calcio { get; set; }
-        public float Hierro { get; set; }
+        public double Cantidad { get; set; }
+        public double Calorias { get; set; }
+        public double Carbohidratos { get; set; }
+        public double Proteina { get; set; }
+        public double GrasasTotales { get; set; }
+        public double Sodio { get; set; }
+        public double Potasio { get; set; }
+        public double Fibra { get; set; }
+        public double Azucar { get; set; }
+        public double VitaminaA { get; set; }
+        public double VitaminaC { get; set; }
+        public double Calcio { get; set; }
+        public double Hierro { get; set; }
         [ForeignKey("ConsumoDiario")]
         public int ConsumoDiario_Id { get; set; }
         public ConsumoDiario ConsumoDiario { get; set; }

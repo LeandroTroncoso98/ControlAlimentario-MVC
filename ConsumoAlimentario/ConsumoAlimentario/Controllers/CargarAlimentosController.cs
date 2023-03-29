@@ -40,7 +40,7 @@ namespace ConsumoAlimentario.Controllers
                 var alimentoCargado = _alimentoCargadoRepository.CalcularAlimentoCargado(alimento, consumoDiarioAlimentoVM.AlimentoCargado.Cantidad, consumoDiarioAlimentoVM.AlimentoCargado.ConsumoDiario_Id);
                 _alimentoCargadoRepository.Crear(alimentoCargado);
                 _alimentoCargadoRepository.Save();
-                _consumoDiarioRepository.AgregarAlimentoCargado(alimentoCargado.ConsumoDiario_Id, alimentoCargado);
+                _consumoDiarioRepository.ActulizarConsumoDiario(alimentoCargado.ConsumoDiario_Id);
                 _consumoDiarioRepository.Save();
                 return RedirectToAction("AdministrarConsumoDiario", "ConsumoDiarios", new { id = alimentoCargado.ConsumoDiario_Id });
             }
@@ -56,9 +56,8 @@ namespace ConsumoAlimentario.Controllers
             var alimentoAQuitar = alimento;
             _alimentoCargadoRepository.Eliminar(alimento);
             _alimentoCargadoRepository.Save();
-            _consumoDiarioRepository.QuitarAlimentoCargado(alimentoAQuitar.ConsumoDiario_Id, alimentoAQuitar);
-            return RedirectToAction("AdministrarConsumoDiario", "ConsumoDiarios", new { id = alimento.Alimento_Id });
+            _consumoDiarioRepository.ActulizarConsumoDiario(alimentoAQuitar.ConsumoDiario_Id);
+            return RedirectToAction("AdministrarConsumoDiario", "ConsumoDiarios", new { id = alimentoAQuitar.ConsumoDiario_Id });
         }
-
     }
 }

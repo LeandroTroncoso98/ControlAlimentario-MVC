@@ -9,7 +9,7 @@ namespace ConsumoAlimentario.AccesoDatos.Repository.IRepository
 {
     public interface IAlimentoCargadoRepository:IRepositorio<AlimentoCargado>
     {
-        AlimentoCargado CalcularAlimentoCargado(Alimento alimento, float cantidad, int idConsumo);
+        AlimentoCargado CalcularAlimentoCargado(Alimento alimento, double cantidad, int idConsumo);
         List<AlimentoCargado> GetListAlimentoCargadoFromId(int id);
 
 
