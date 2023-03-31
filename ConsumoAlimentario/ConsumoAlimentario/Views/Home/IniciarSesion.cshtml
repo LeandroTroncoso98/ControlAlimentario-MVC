@@ -1,0 +1,28 @@
+﻿@model ConsumoAlimentario.Models.Usuario
+@{
+    ViewData["Title"] = "IniciarSesion";
+    Layout = "~/Views/Shared/_Registro.cshtml";
+}
+
+<h1>IniciarSesion</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4 border  p-2">
+            <form asp-controller="Home" asp-action="IniciarSesion" method="post">
+                <input  class="form-control mb-3" type="text" placeholder="Correo" asp-for="Email" />
+                <input class="form-control mb-3" type="password" placeholder="Contraseña" asp-for="Password"  />
+                <button type="submit" class="btn btn-success">Ingresar</button>
+                @if (ViewData["Mensaje"] != null)
+                {
+                    <div class="form-group">
+                        <div class="alert alert-danger" role="alert">
+                            @ViewData["Mensaje"]
+                        </div>
+                    </div>
+                }
+                No tienes una cuenta? <a href="@Url.Action("Registrarse","Home")">Registrate</a>
+            </form>
+        </div>
+    </div>
+</div>

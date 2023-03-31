@@ -15,3 +15,5 @@ C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\Control
 C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.AccesoDatos\obj\Debug\net7.0\ConsumoAlimentario.AccesoDatos.pdb
 C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.AccesoDatos\obj\Debug\net7.0\ConsumoAlimentario.AccesoDatos.genruntimeconfig.cache
 C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.AccesoDatos\obj\Debug\net7.0\ref\ConsumoAlimentario.AccesoDatos.dll
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.AccesoDatos\bin\Debug\net7.0\ConsumoAlimentario.Utilidad.dll
+C:\Users\herei\OneDrive\Escritorio\asp.core eduIT\ConsumoAlimentario MVC\ControlAlimentario-MVC\ConsumoAlimentario\ConsumoAlimentario.AccesoDatos\bin\Debug\net7.0\ConsumoAlimentario.Utilidad.pdb

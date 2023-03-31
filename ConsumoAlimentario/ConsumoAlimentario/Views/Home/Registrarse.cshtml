@@ -1,0 +1,27 @@
+﻿@model ConsumoAlimentario.Models.Usuario
+@{
+    ViewData["Title"] = "Registrarse";
+    Layout = "~/Views/Shared/_Registro.cshtml";
+}
+
+<h1>Registrarse</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4 border  p-2">
+            <form asp-controller="Home" asp-action="Registrarse" method="post">
+                <input class="form-control mb-3" asp-for="Email" type="text" placeholder="Correo" />
+                <input class="form-control mb-3" type="password" placeholder="Contraseña" asp-for="Password" />
+                <button type="submit" class="btn btn-success">Registrate</button>
+                @if (ViewData["Mensaje"] != null)
+                {
+                    <div class="form-group">
+                        <div class="alert alert-danger" role="alert">
+                            @ViewData["Mensaje"]
+                        </div>
+                    </div>
+                }
+                ¿Ya tienes una cuenta? <a href="@Url.Action("Registrarse","Home")">Registrate</a>
+            </form>
+        </div>
+    </div>
+</div>

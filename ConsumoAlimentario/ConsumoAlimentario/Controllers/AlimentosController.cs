@@ -1,10 +1,12 @@
 ﻿using ConsumoAlimentario.AccesoDatos.Repository.IRepository;
 using ConsumoAlimentario.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 
 namespace ConsumoAlimentario.Controllers
 {
+    [Authorize]
     public class AlimentosController : Controller
     {
         private readonly IAlimentoRepository _alimentoRepository;
@@ -67,14 +69,14 @@ namespace ConsumoAlimentario.Controllers
             if (alimento == null)
                 return Json(new
                 {
-                    success = "false",
+                    success = false,
                     message = "Hubo un error al eliminar el alimento."
                 });
             _alimentoRepository.Eliminar(alimento);
             _alimentoRepository.Save();
             return Json(new
             {
-                success = "true",
+                success = true,
                 message = "El alimento ha sido eliminado con exíto."
             });
 

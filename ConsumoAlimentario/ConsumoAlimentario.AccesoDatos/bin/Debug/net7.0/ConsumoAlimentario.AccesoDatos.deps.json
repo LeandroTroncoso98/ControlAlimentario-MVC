@@ -9,6 +9,7 @@
       "ConsumoAlimentario.AccesoDatos/1.0.0": {
         "dependencies": {
           "ConsumoAlimentario.Models": "1.0.0",
+          "ConsumoAlimentario.Utilidad": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.4",
           "Microsoft.EntityFrameworkCore.Design": "7.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4",
@@ -1711,6 +1712,11 @@
         "runtime": {
           "ConsumoAlimentario.Models.dll": {}
         }
+      },
+      "ConsumoAlimentario.Utilidad/1.0.0": {
+        "runtime": {
+          "ConsumoAlimentario.Utilidad.dll": {}
+        }
       }
     }
   },
@@ -2869,6 +2875,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "ConsumoAlimentario.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConsumoAlimentario.Utilidad/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

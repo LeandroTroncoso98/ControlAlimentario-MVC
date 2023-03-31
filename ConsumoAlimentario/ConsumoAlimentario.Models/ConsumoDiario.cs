@@ -30,5 +30,9 @@ namespace ConsumoAlimentario.Models
         public List<AlimentoCargado> ListaAlimentos { get; set; }
         [NotMapped]
         public string FechaString { get;set; }
+
+        [ForeignKey("Cliente")]
+        public int Cliente_Id { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }

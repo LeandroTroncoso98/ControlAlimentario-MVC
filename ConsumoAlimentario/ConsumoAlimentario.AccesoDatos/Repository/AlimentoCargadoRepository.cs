@@ -1,5 +1,6 @@
 ﻿using ConsumoAlimentario.AccesoDatos.Repository.IRepository;
 using ConsumoAlimentario.Models;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -23,7 +23,7 @@ function cargarDatatable() {
                                 <i class="far fa-edit"></i>
                                 </a>
                                 &nbsp;
-                                <a onclick=Delete("/Alimentos/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px;">
+                                <a onclick=Delete("/ConsumoDiarios/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px;">
                                 <i class="far fa-trash-alt"></i>
                                 </a>
                             </div>

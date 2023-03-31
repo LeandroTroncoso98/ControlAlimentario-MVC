@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConsumoAlimentario.Models\ConsumoAlimentario.Models.csproj" />
+    <ProjectReference Include="..\ConsumoAlimentario.Utilidad\ConsumoAlimentario.Utilidad.csproj" />
   </ItemGroup>
 
 </Project>

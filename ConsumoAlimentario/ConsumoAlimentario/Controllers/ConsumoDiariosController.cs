@@ -1,12 +1,14 @@
 ﻿using ConsumoAlimentario.AccesoDatos.Repository.IRepository;
 using ConsumoAlimentario.Models;
 using ConsumoAlimentario.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Packaging.Signing;
 using System.Diagnostics.Contracts;
 
 namespace ConsumoAlimentario.Controllers
 {
+    [Authorize]
     public class ConsumoDiariosController : Controller
     {
         private readonly IConsumoDiarioRepository _consumoDiarioRepository;
@@ -53,6 +55,15 @@ namespace ConsumoAlimentario.Controllers
             consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos = _alimentoCargadoRepository.GetListAlimentoCargadoFromId(id);
             return View(consumoDiarioAlimentoVM);
         }
-        
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            var consumoDiario = _consumoDiarioRepository.Get(id);
+            if (consumoDiario is null)
+                return Json(new { success = false, message = "No pudo ser posible eliminarlo." });
+            _consumoDiarioRepository.Eliminar(consumoDiario);
+            _consumoDiarioRepository.Save();
+            return Json(new { success = true, message = "El día fue eliminado." });
+        }
     }
 }

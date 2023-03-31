@@ -1,10 +1,12 @@
 ﻿using ConsumoAlimentario.AccesoDatos.Repository.IRepository;
 using ConsumoAlimentario.Models;
 using ConsumoAlimentario.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConsumoAlimentario.Controllers
 {
+    [Authorize]
     public class CargarAlimentosController : Controller
     {
         private readonly IAlimentoCargadoRepository _alimentoCargadoRepository;

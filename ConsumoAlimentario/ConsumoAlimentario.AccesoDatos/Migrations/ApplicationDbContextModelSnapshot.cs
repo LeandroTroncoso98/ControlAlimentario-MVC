@@ -144,6 +144,38 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
                     b.ToTable("AlimentoCargado");
                 });
 
+            modelBuilder.Entity("ConsumoAlimentario.Models.Cliente", b =>
+                {
+                    b.Property<int>("Cliente_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Cliente_Id"));
+
+                    b.Property<double>("Altura")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Apellido")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Peso")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Usuario_Id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Cliente_Id");
+
+                    b.HasIndex("Usuario_Id");
+
+                    b.ToTable("Cliente");
+                });
+
             modelBuilder.Entity("ConsumoAlimentario.Models.ConsumoDiario", b =>
                 {
                     b.Property<int>("ConsumoDiario_Id")
@@ -163,6 +195,9 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
 
                     b.Property<double>("CarbohidratosTotales")
                         .HasColumnType("float");
+
+                    b.Property<int>("Cliente_Id")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("Date");
@@ -193,7 +228,30 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
 
                     b.HasKey("ConsumoDiario_Id");
 
+                    b.HasIndex("Cliente_Id");
+
                     b.ToTable("ConsumoDiario");
+                });
+
+            modelBuilder.Entity("ConsumoAlimentario.Models.Usuario", b =>
+                {
+                    b.Property<int>("Usuario_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Usuario_Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Usuario_Id");
+
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("ConsumoAlimentario.Models.AlimentoCargado", b =>
@@ -215,9 +273,36 @@ namespace ConsumoAlimentario.AccesoDatos.Migrations
                     b.Navigation("ConsumoDiario");
                 });
 
+            modelBuilder.Entity("ConsumoAlimentario.Models.Cliente", b =>
+                {
+                    b.HasOne("ConsumoAlimentario.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("Usuario_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("ConsumoAlimentario.Models.ConsumoDiario", b =>
+                {
+                    b.HasOne("ConsumoAlimentario.Models.Cliente", "Cliente")
+                        .WithMany("ListaConsumoDiario")
+                        .HasForeignKey("Cliente_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
             modelBuilder.Entity("ConsumoAlimentario.Models.Alimento", b =>
                 {
                     b.Navigation("AlimentoCargado");
+                });
+
+            modelBuilder.Entity("ConsumoAlimentario.Models.Cliente", b =>
+                {
+                    b.Navigation("ListaConsumoDiario");
                 });
 
             modelBuilder.Entity("ConsumoAlimentario.Models.ConsumoDiario", b =>

@@ -3,6 +3,9 @@ using ConsumoAlimentario.AccesoDatos.Repository;
 using ConsumoAlimentario.AccesoDatos.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -14,7 +17,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IAlimentoRepository, AlimentoRepository>();
 builder.Services.AddScoped<IConsumoDiarioRepository, ConsumoDiarioRepository>();
 builder.Services.AddScoped<IAlimentoCargadoRepository, AlimentoCargadoRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Home/IniciarSesion";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+    });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -34,10 +44,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+//
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=IniciarSesion}/{id?}");
 
 app.Run();
