@@ -11,5 +11,8 @@ namespace ConsumoAlimentario.AccesoDatos.Repository.IRepository
     {
         Usuario GetUsuario(string email, string clave);
         Usuario SaveUsuario(Usuario usuario);
+        bool ExisteUsuario(string emial);
+        Usuario GetForEmail(string email);
+
     }
 }

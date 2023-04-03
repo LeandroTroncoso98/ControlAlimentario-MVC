@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\ConsumoAlimentario.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\Imagenes\\Consumo diario .net.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Consumo diario .net.png"
+    },
+    {
+      "Id": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\css\\Normalize.css",
+      "PackagePath": "staticwebassets\\css\\Normalize.css"
+    },
+    {
+      "Id": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\css\\StyleCss.css",
+      "PackagePath": "staticwebassets\\css\\StyleCss.css"
+    },
+    {
       "Id": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

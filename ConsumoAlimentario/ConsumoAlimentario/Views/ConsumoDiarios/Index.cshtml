@@ -1,11 +1,15 @@
-﻿
+﻿@model ConsumoAlimentario.Models.ViewModel.ConsumoDiarioUsuarioVM
 <div class="container-fluid mt-3">
     <div class="row">
         <div class="col-4 border">
             <h3 class="text-uppercase text-primary">Datos Del Usuario</h3>
+            <h3>Email @ViewData["Email"]</h3>
+            <h3 >Nombre: @Model.Usuario.Nombre @Model.Usuario.Apellido</h3>
+            <h3>Peso: @Model.Usuario.Peso Kg.</h3>
+            <h3>Altura: @Model.Usuario.Altura Mts.</h3>
         </div>
-        <div class="col-8">
-            <h2 class="text-primary text-uppercase">Historial de días</h2>
+        <div class="col-5 offset-5">
+            <h4 class="text-primary text-uppercase">Historial de días</h4>
             <table id="tblConsumo" class="table table-responsive table-bordered">
                 <thead>
                     <tr>
@@ -14,16 +18,31 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
+                <tbody>
+                @foreach(var item in Model.ListaConsumo)
+                {
+                        <tr>
+                            <td>@item.ConsumoDiario_Id</td>
+                            <td>@item.Fecha.ToString("d")</td>
+                            <td>@item.CaloriasTotales</td>
+                            <td>
+                                <a asp-action="AdministrarConsumoDiario" asp-controller="ConsumoDiarios" asp-route-id="@item.ConsumoDiario_Id" class="btn btn-outline-primary">Administrar</a>
+                                <a asp-action="Delete" asp-controller="ConsumoDiarios" asp-route-id="@item.ConsumoDiario_Id" class="btn-danger btn">Borrar</a>
+                            </td>
+                        </tr>
+                }                                   
+                </tbody>
             </table>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-4 m-3">
-        <a asp-controller="ConsumoDiarios" asp-action="ConsumoDelDia" class="btn btn-success"> Comenzar nuevo dia</a>
+        <a asp-controller="ConsumoDiarios" asp-action="ConsumoDelDia" asp-route-id="@Model.Usuario.Usuario_Id" class="btn btn-success"> Comenzar nuevo dia</a>
     </div>
 </div>
 
-@section Scripts{
+
+@*@section Scripts{
     <script src="~/js/consumoDiario.js"></script>
-}
+}*@

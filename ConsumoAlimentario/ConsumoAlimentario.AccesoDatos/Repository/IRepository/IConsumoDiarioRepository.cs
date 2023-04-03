@@ -12,5 +12,6 @@ namespace ConsumoAlimentario.AccesoDatos.Repository.IRepository
         bool Existe(DateTime fecha);
         ConsumoDiario GetForDate(DateTime fecha);
         void ActulizarConsumoDiario(int id);
+        IEnumerable<ConsumoDiario> GetForUserId(int id);
     }
 }

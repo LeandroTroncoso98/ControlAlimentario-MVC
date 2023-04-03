@@ -1,0 +1,105 @@
+﻿:root {
+    --verdeOscuro: #7E8136;
+    --VerdeClaro: #959940;
+    --Naranja: #F0C987;
+    --Gris: #F6F7EB;
+    --Blanco: #FFFFFF;
+    --Negro: #3C3C3C;
+    --FuentePrincipal: 'Alegreya Sans SC', sans-serif;
+    --FuenteSecundaria: 'Comfortaa', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+
+    background-image: url('../imagenes/consumo diario .net.png');
+}
+
+.TituloRegistro {
+    font-family: var(--FuentePrincipal);
+    font-size: 5rem;
+    line-height: 2;
+    font-weight: 900;
+    color: var(--VerdeClaro);
+    text-shadow: 3px 3px 2px var(--verdeOscuro);
+}
+.divIniciarRegistro {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 500px;
+    height: auto;
+}
+.labelIniciarRegistro{
+    font-family: var(--FuenteSecundaria);
+    font-weight:300;
+    font-size:2rem;
+    color:var(--Negro);
+}
+
+.button-iniciarRegistro {
+    position: relative;
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    background: var(--VerdeClaro);
+    color: var(--Blanco);
+    cursor: pointer;
+    transition: .5s;
+    width: 30rem;
+    font-family: var(--FuentePrincipal);
+    font-weight: 900;
+    font-size: 1.8rem;
+    Letter-spacing:.3rem;
+    
+}
+
+    .button-iniciarRegistro:hover {
+        background: var(--verdeOscuro);
+    }
+.button-iniciarRegistro-Regresar {
+    position: relative;
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    background: var(--Naranja);
+    color: var(--Blanco);
+    cursor: pointer;
+    transition: .5s;
+    width: 30rem;
+    font-family: var(--FuentePrincipal);
+    font-weight: 900;
+    font-size: 1.8rem;
+    Letter-spacing: .3rem;
+}
+    .button-iniciarRegistro-Regresar:hover {
+        color: var(--Blanco);
+        background: #E6A637;
+    }
+
+.input-style {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.TienesCuenta {
+    font-family: var(--verdeOscuro);
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: var(--Negro);
+}
+
+.TienesCuenta a{
+    text-decoration:none;
+    color:var(--Negro);
+}
+.TienesCuenta a:hover{
+    color:var(--verdeOscuro);
+}

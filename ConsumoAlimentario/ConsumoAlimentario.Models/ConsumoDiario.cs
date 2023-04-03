@@ -31,8 +31,8 @@ namespace ConsumoAlimentario.Models
         [NotMapped]
         public string FechaString { get;set; }
 
-        [ForeignKey("Cliente")]
-        public int Cliente_Id { get; set; }
-        public Cliente Cliente { get; set; }
+        [ForeignKey("Usuario")]
+        public int Usuario_Id { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

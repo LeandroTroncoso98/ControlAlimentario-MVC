@@ -4,7 +4,9 @@ using ConsumoAlimentario.Models.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Packaging.Signing;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Security.Claims;
 
 namespace ConsumoAlimentario.Controllers
 {
@@ -13,27 +15,40 @@ namespace ConsumoAlimentario.Controllers
     {
         private readonly IConsumoDiarioRepository _consumoDiarioRepository;
         private readonly IAlimentoCargadoRepository _alimentoCargadoRepository;
-        public ConsumoDiariosController(IConsumoDiarioRepository consumoDiarioRepository, IAlimentoCargadoRepository alimentoCargadoRepository)
+        private readonly IUsuarioRepository _usuarioRepository;
+
+        public ConsumoDiariosController(IConsumoDiarioRepository consumoDiarioRepository, IAlimentoCargadoRepository alimentoCargadoRepository, IUsuarioRepository usuarioRepository)
         {
             _consumoDiarioRepository = consumoDiarioRepository;
-            _alimentoCargadoRepository= alimentoCargadoRepository;
-            
+            _alimentoCargadoRepository = alimentoCargadoRepository;
+            _usuarioRepository = usuarioRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            ClaimsPrincipal claimUser = HttpContext.User;
+            string mail = "";
+
+            mail = claimUser.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).FirstOrDefault();
+            var usuario = _usuarioRepository.GetForEmail(mail);
+            if (usuario == null)
+                return NotFound();
+            ViewData["Email"] = mail;
+            ConsumoDiarioUsuarioVM consumoDiarioUsuarioVM = new ConsumoDiarioUsuarioVM
+            {
+                ListaConsumo = _consumoDiarioRepository.GetForUserId(usuario.Usuario_Id),
+                Usuario = _usuarioRepository.GetForEmail((string)ViewData["Email"])
+            };
+            return View(consumoDiarioUsuarioVM);
         }
-        public IActionResult GetAll()
-        {
-            return Json(new { Data = _consumoDiarioRepository.GetAll() });
-        }
+
         [HttpGet]
-        public IActionResult ConsumoDelDia()
+        public IActionResult ConsumoDelDia(int id)
         {
             ConsumoDiario consumoDiario = new ConsumoDiario()
             {
-                Fecha = DateTime.Now
+                Fecha = DateTime.Now,
+                Usuario_Id = id
             };
             if (!_consumoDiarioRepository.Existe(consumoDiario.Fecha))
             {
@@ -41,7 +56,7 @@ namespace ConsumoAlimentario.Controllers
                 _consumoDiarioRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index));       
+            return RedirectToAction(nameof(Index));
         }
         [HttpGet]
         public IActionResult AdministrarConsumoDiario(int id)
@@ -55,15 +70,15 @@ namespace ConsumoAlimentario.Controllers
             consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos = _alimentoCargadoRepository.GetListAlimentoCargadoFromId(id);
             return View(consumoDiarioAlimentoVM);
         }
-        [HttpDelete]
+        [HttpGet]
         public IActionResult Delete(int id)
         {
             var consumoDiario = _consumoDiarioRepository.Get(id);
             if (consumoDiario is null)
-                return Json(new { success = false, message = "No pudo ser posible eliminarlo." });
+                return NotFound();
             _consumoDiarioRepository.Eliminar(consumoDiario);
             _consumoDiarioRepository.Save();
-            return Json(new { success = true, message = "El día fue eliminado." });
+            return RedirectToAction(nameof(Index));
         }
     }
 }

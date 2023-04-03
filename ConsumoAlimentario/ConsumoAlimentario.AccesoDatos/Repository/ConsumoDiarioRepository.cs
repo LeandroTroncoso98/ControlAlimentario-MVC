@@ -73,9 +73,11 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
             consumoDiario.HierroTotal = 0;
         }
 
-        public override void Crear(ConsumoDiario entity)
+
+
+        public IEnumerable<ConsumoDiario> GetForUserId(int id)
         {
-            _context.ConsumoDiario.Add(entity);
+            return _context.ConsumoDiario.Where(c => c.Usuario_Id == id).ToList();
         }
 
     }

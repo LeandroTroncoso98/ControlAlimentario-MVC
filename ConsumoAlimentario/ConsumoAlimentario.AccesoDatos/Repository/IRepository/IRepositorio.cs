@@ -14,5 +14,6 @@ namespace ConsumoAlimentario.AccesoDatos.Repository.IRepository
         IEnumerable<C> GetAll();
         C Get(int id);
         void Save();
+
     }
 }

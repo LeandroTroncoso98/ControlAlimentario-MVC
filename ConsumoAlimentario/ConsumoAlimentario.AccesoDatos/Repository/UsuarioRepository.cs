@@ -28,5 +28,14 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
             _context.SaveChanges();
             return usuario;
         }
+        public bool ExisteUsuario(string email)
+        {
+            return _context.Usuario.Any(c => c.Email == email);
+        }
+        public Usuario GetForEmail(string email)
+        {
+            return _context.Usuario.FirstOrDefault(c => c.Email == email);
+        }
+
     }
 }

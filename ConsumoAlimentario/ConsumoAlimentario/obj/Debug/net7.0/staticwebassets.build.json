@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Sxg7lcH2sTUPVDHNSMnplIXVq0JMGZ8KtkjD8mwLHD4=",
+  "Hash": "VobYxM6+Cu65H9w71f4bOHtzdxogGampuHP8NJC+6bg=",
   "Source": "ConsumoAlimentario",
   "BasePath": "_content/ConsumoAlimentario",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ConsumoAlimentario.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\css\\Normalize.css",
+      "SourceId": "ConsumoAlimentario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\",
+      "BasePath": "_content/ConsumoAlimentario",
+      "RelativePath": "css/Normalize.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Normalize.css"
+    },
+    {
       "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\css\\site.css",
       "SourceId": "ConsumoAlimentario",
       "SourceType": "Discovered",
@@ -68,6 +85,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\css\\StyleCss.css",
+      "SourceId": "ConsumoAlimentario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\",
+      "BasePath": "_content/ConsumoAlimentario",
+      "RelativePath": "css/StyleCss.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\StyleCss.css"
+    },
+    {
       "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\favicon.ico",
       "SourceId": "ConsumoAlimentario",
       "SourceType": "Discovered",
@@ -83,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\Imagenes\\Consumo diario .net.png",
+      "SourceId": "ConsumoAlimentario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\",
+      "BasePath": "_content/ConsumoAlimentario",
+      "RelativePath": "Imagenes/Consumo diario .net.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\Consumo diario .net.png"
     },
     {
       "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\js\\alimento.js",

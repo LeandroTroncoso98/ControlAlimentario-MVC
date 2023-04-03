@@ -16,6 +16,15 @@ namespace ConsumoAlimentario.Models
         public string Email { get; set; }
         [Required(ErrorMessage = "Contraseña oblígatoria.")]
         public string Password { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio.")]
+        public string Nombre { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio.")]
+        public string Apellido { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio.")]
+        public double Peso { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio.")]
+        public double Altura { get; set; }
+        public List<ConsumoDiario> ListaConsumoDiario { get; set; }
 
     }
 }

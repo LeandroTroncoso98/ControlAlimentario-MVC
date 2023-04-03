@@ -26,6 +26,11 @@ namespace ConsumoAlimentario.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(_usuarioRepository.ExisteUsuario(usuario.Email))
+                {
+                    ViewData["Mensaje"] = "Ese email ya se encuentra en uso";
+                    return View();
+                }
                 usuario.Password = Encriptador.EncriptarClave(usuario.Password);
                 Usuario usuarioCreado = _usuarioRepository.SaveUsuario(usuario);
                 if (usuarioCreado.Usuario_Id > 0)
@@ -40,11 +45,16 @@ namespace ConsumoAlimentario.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult IniciarSesion(Usuario usuario)
+        public IActionResult IniciarSesion(string email ,string password)
         {
+            if(email == null||password == null)
+            {
+                ViewData["Mensaje"] = "Debe ingresar el mail y contraseña";
+                return View();
+            }
             if (ModelState.IsValid)
             {
-                Usuario usuarioDB = _usuarioRepository.GetUsuario(usuario.Email, Encriptador.EncriptarClave(usuario.Password));
+                Usuario usuarioDB = _usuarioRepository.GetUsuario(email, Encriptador.EncriptarClave(password));
 
                 if (usuarioDB == null)
                 {
@@ -65,7 +75,7 @@ namespace ConsumoAlimentario.Controllers
                     new ClaimsPrincipal(claimsIdentity),
                     properties
                     );
-                return RedirectToAction("Index", "ConsumoDiarios");
+                return RedirectToAction("Index", "ConsumoDiarios",new {id = usuarioDB.Usuario_Id});
             }
             return View();
         }
