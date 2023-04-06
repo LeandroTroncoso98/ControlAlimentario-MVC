@@ -7,59 +7,150 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-4 border">
-            <h4 class="display-4 text-center">Consumo del @Model.ConsumoDiario.Fecha.ToString("D")</h4>
-            <hr />
-            <div class="row">
-                <div class="col-6">
-                    <p class="text-info text-center">Calorias totales: @Model.ConsumoDiario.CaloriasTotales Gr.</p>
-                    <p class="text-info text-center">Carbohidratos Totales: @Model.ConsumoDiario.CarbohidratosTotales Gr.</p>
-                    <p class="text-info text-center">Proteínas totales: @Model.ConsumoDiario.ProteinasTotales Gr.</p>
-                    <p class="text-info text-center">Grasas totales: @Model.ConsumoDiario.GrasasTotales Gr.</p>
-                    <p class="text-info text-center">Sodio total: @Model.ConsumoDiario.SodioTotal Gr.</p>
-                    <p class="text-info text-center">Potasio total: @Model.ConsumoDiario.PotasioTotal Gr.</p>
-                </div>
-                <div class="col-6">
-                    <p class="text-info text-center">Fibras totales: @Model.ConsumoDiario.FibrasTotales Gr.</p>
-                    <p class="text-info text-center">Azucar Total: @Model.ConsumoDiario.AzucarTotal Gr.</p>
-                    <p class="text-info text-center">Vitamina A: @Model.ConsumoDiario.VitaminaATotal Gr.</p>
-                    <p class="text-info text-center">Vitamina C: @Model.ConsumoDiario.VitaminaCTotal Gr.</p>
-                    <p class="text-info text-center">Calcio total: @Model.ConsumoDiario.CalcioTotal Gr.</p>
-                    <p class="text-info text-center">Hierro total: @Model.ConsumoDiario.HierroTotal Gr.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <table class="table table-sm">
-                        <tr>
-                            <th>Alimento</th>
-                            <th>Cantidad</th>
-                            <th>Quitar</th>
-                        </tr>
-                        @foreach (var item in @Model.ConsumoDiario.ListaAlimentos)
+        <div class="col-5">
+            <div class="row  align-items-center  vh-100">
+                <div class="div-informacion-usuario">
+                    <h4 class="datos-usuario-titulo text-center">Consumo del @Model.ConsumoDiario.Fecha.ToString("D")</h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="datos-usuario-item text-center">Calorias totales: @Model.ConsumoDiario.CaloriasTotales Gr.</p>
+                            <p class="datos-usuario-item text-center">Carbohidratos Totales: @Model.ConsumoDiario.CarbohidratosTotales Gr.</p>
+                            <p class="datos-usuario-item text-center">Proteínas totales: @Model.ConsumoDiario.ProteinasTotales Gr.</p>
+                            <p class="datos-usuario-item text-center">Grasas totales: @Model.ConsumoDiario.GrasasTotales Gr.</p>
+                            <p class="datos-usuario-item text-center">Sodio total: @Model.ConsumoDiario.SodioTotal Gr.</p>
+                            <p class="datos-usuario-item text-center">Potasio total: @Model.ConsumoDiario.PotasioTotal Gr.</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="datos-usuario-item text-center">Fibras totales: @Model.ConsumoDiario.FibrasTotales Gr.</p>
+                            <p class="datos-usuario-item text-center">Azucar Total: @Model.ConsumoDiario.AzucarTotal Gr.</p>
+                            <p class="datos-usuario-item text-center">Vitamina A: @Model.ConsumoDiario.VitaminaATotal Gr.</p>
+                            <p class="datos-usuario-item text-center">Vitamina C: @Model.ConsumoDiario.VitaminaCTotal Gr.</p>
+                            <p class="datos-usuario-item text-center">Calcio total: @Model.ConsumoDiario.CalcioTotal Gr.</p>
+                            <p class="datos-usuario-item text-center">Hierro total: @Model.ConsumoDiario.HierroTotal Gr.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-sm">
+                                <tr>
+                                    <th>Alimento</th>
+                                    <th>Cantidad</th>
+                                    <th>Quitar</th>
+                                </tr>
+                                @foreach (var item in @Model.ConsumoDiario.ListaAlimentos)
+                                {
+                                    <tr>
+                                        <td>@item.Nombre</td>
+                                        <td>@item.Cantidad Gr.</td>
+                                        <td><a asp-action="EliminarAlimentoCargado" asp-controller="CargarAlimentos" asp-route-id="@item.AlimentoCargado_Id" class="btn btn-danger form-control"> <i class="bi bi-trash3-fill"></i></a></td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                        @if (Model.ConsumoDiario.ListaAlimentos == null)
                         {
-                            <tr>
-                                <td>@item.Nombre</td>
-                                <td>@item.Cantidad Gr.</td>
-                                <td><a asp-action="EliminarAlimentoCargado" asp-controller="CargarAlimentos" asp-route-id="@item.AlimentoCargado_Id" class="btn btn-danger form-control"> <i class="bi bi-trash3-fill"></i></a></td>
-                            </tr>
+                            <p class="text-warning text-center">No posee alimentos cargados.</p>
                         }
-                    </table>
+                    </div>
                 </div>
-                @if (Model.ConsumoDiario.ListaAlimentos == null)
-                {
-                    <p class="text-warning text-center">No posee alimentos cargados.</p>
-                }
             </div>
         </div>
-        <div class="col-8">
-            <div class="d-flex justify-content-end">
-                <a asp-action="Index" class="btn btn-danger"><i class="bi bi-backspace"></i> Volver</a>
-            </div>
+
+        <div class="col-7">
             <div class="row">
-                <div class="col">
-                    <a href="@Url.Action("Cargar", "CargarAlimentos", new { id = Model.ConsumoDiario.ConsumoDiario_Id})" class="btn btn-outline-success" role="button">Cargar alimento</a>
+                <div class="col-12 mt-5">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a href="@Url.Action("Cargar", "CargarAlimentos", new { id = Model.ConsumoDiario.ConsumoDiario_Id})" class="button-iniciarRegistro text-center text-white text-decoration-none" role="button">Cargar alimento</a>
+                        </div>
+                        <div>
+                            <a asp-action="Index" class="button-iniciarRegistro-Regresar text-center text-decoration-none"><i class="bi bi-backspace"></i> Volver</a>
+                        </div>
+                        <div>
+                            <a asp-controller="Home" asp-action="CerrarSesion" class="button-rojo text-decoration-none text-white">Cerrar Sesion </a>
+
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="row mt-5">
+                <div class="text-center">
+                    <h3 class="TituloRegistro text-center">Metas del día:</h3>
+                </div>
+                <div class="row mt-2">
+                    <h6>Calorias:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CaloriasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CaloriasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.CaloriasPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Carbohidratos:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CarbohidratosPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CarbohidratosPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.CarbohidratosPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Proteinas:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.ProteinasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.ProteinasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.ProteinasPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Grasas Totales:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.GrasasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.GrasasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.GrasasPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Sodio:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.SodioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.SodioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.SodioPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Potasio:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.PotasioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.PotasioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.PotasioPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Fibras:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.FibrasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.FibrasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.FibrasPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Azucares:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.AzucarPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.AzucarPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.AzucarPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Vitamina A:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.VitaminaAPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.VitaminaAPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.VitaminaAPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Vitamina C:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.VitaminaCPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.VitaminaCPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.VitaminaCPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Calcio:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CalcioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CalcioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.CalcioPorcentual%</div>
+                </div>
+                <div class="row mt-2">
+                    <h6>Hierro:</h6>
+                </div>
+                <div class="progress" style="height:2rem;">
+                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.HierroPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.HierroPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.HierroPorcentual%</div>
+                </div>
+
             </div>
         </div>
     </div>

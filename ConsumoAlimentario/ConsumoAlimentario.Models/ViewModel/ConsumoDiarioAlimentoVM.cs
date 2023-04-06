@@ -14,6 +14,8 @@ namespace ConsumoAlimentario.Models.ViewModel
         public IEnumerable<SelectListItem> Alimentos { get; set; }
         public IEnumerable<AlimentoCargado> AlimentoCargados { get; set; }
         public AlimentoCargado AlimentoCargado { get; set; }
+        public ObjetivoDiario ObjetivoDiario { get; set; }
+        public PorcentualObjetivoDiario PorcentualObjetivoDiario { get; set; }
 
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VobYxM6+Cu65H9w71f4bOHtzdxogGampuHP8NJC+6bg=",
+  "Hash": "NeDJGUJzDr0to/rXBPzV02pApguT9H5JqxRYzt5tvgY=",
   "Source": "ConsumoAlimentario",
   "BasePath": "_content/ConsumoAlimentario",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagenes\\Consumo diario .net.png"
+    },
+    {
+      "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\Imagenes\\FondoLogueado.png",
+      "SourceId": "ConsumoAlimentario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\",
+      "BasePath": "_content/ConsumoAlimentario",
+      "RelativePath": "Imagenes/FondoLogueado.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\FondoLogueado.png"
     },
     {
       "Identity": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\js\\alimento.js",

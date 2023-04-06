@@ -25,6 +25,7 @@ namespace ConsumoAlimentario.Models
         [Required(ErrorMessage = "Campo obligatorio.")]
         public double Altura { get; set; }
         public List<ConsumoDiario> ListaConsumoDiario { get; set; }
+        public ObjetivoDiario ObjetivoDiario { get; set; }
 
     }
 }

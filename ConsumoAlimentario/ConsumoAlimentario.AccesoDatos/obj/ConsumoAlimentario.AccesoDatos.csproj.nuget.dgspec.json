@@ -187,7 +187,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario.Models\\ConsumoAlimentario.Models.csproj": {
+                "projectPath": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario.Models\\ConsumoAlimentario.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

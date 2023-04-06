@@ -1,6 +1,7 @@
 ﻿using ConsumoAlimentario.AccesoDatos.Repository.IRepository;
 using ConsumoAlimentario.Models;
 using ConsumoAlimentario.Models.ViewModel;
+using ConsumoAlimentario.Utilidad;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Packaging.Signing;
@@ -16,12 +17,14 @@ namespace ConsumoAlimentario.Controllers
         private readonly IConsumoDiarioRepository _consumoDiarioRepository;
         private readonly IAlimentoCargadoRepository _alimentoCargadoRepository;
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IObjetivoDiarioRepository _objetivoDiarioRepository;
 
-        public ConsumoDiariosController(IConsumoDiarioRepository consumoDiarioRepository, IAlimentoCargadoRepository alimentoCargadoRepository, IUsuarioRepository usuarioRepository)
+        public ConsumoDiariosController(IConsumoDiarioRepository consumoDiarioRepository, IAlimentoCargadoRepository alimentoCargadoRepository, IUsuarioRepository usuarioRepository, IObjetivoDiarioRepository objetivoDiarioRepository)
         {
             _consumoDiarioRepository = consumoDiarioRepository;
             _alimentoCargadoRepository = alimentoCargadoRepository;
             _usuarioRepository = usuarioRepository;
+            _objetivoDiarioRepository = objetivoDiarioRepository;
         }
 
         public IActionResult Index()
@@ -63,11 +66,14 @@ namespace ConsumoAlimentario.Controllers
         {
             ConsumoDiarioAlimentoVM consumoDiarioAlimentoVM = new ConsumoDiarioAlimentoVM()
             {
-                ConsumoDiario = _consumoDiarioRepository.Get(id)
+                ConsumoDiario = _consumoDiarioRepository.Get(id)                
             };
             if (consumoDiarioAlimentoVM.ConsumoDiario == null)
                 return NotFound();
             consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos = _alimentoCargadoRepository.GetListAlimentoCargadoFromId(id);
+            consumoDiarioAlimentoVM.ObjetivoDiario = _objetivoDiarioRepository.GetObjetivo(consumoDiarioAlimentoVM.ConsumoDiario.Usuario_Id);
+            CalcularPorcentual calcularPorcentual = new CalcularPorcentual();
+            consumoDiarioAlimentoVM.PorcentualObjetivoDiario = calcularPorcentual.Calcular(consumoDiarioAlimentoVM.ObjetivoDiario, consumoDiarioAlimentoVM.ConsumoDiario);
             return View(consumoDiarioAlimentoVM);
         }
         [HttpGet]

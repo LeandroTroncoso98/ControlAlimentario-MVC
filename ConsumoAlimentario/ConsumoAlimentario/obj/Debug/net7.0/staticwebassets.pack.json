@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Imagenes\\Consumo diario .net.png"
     },
     {
+      "Id": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\Imagenes\\FondoLogueado.png",
+      "PackagePath": "staticwebassets\\Imagenes\\FondoLogueado.png"
+    },
+    {
       "Id": "C:\\Users\\herei\\OneDrive\\Escritorio\\asp.core eduIT\\ConsumoAlimentario MVC\\ControlAlimentario-MVC\\ConsumoAlimentario\\ConsumoAlimentario\\wwwroot\\css\\Normalize.css",
       "PackagePath": "staticwebassets\\css\\Normalize.css"
     },

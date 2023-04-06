@@ -18,6 +18,7 @@ builder.Services.AddScoped<IAlimentoRepository, AlimentoRepository>();
 builder.Services.AddScoped<IConsumoDiarioRepository, ConsumoDiarioRepository>();
 builder.Services.AddScoped<IAlimentoCargadoRepository, AlimentoCargadoRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IObjetivoDiarioRepository, ObjetivoDiarioRepository>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

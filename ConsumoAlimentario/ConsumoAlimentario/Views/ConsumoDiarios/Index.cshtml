@@ -1,14 +1,23 @@
 ﻿@model ConsumoAlimentario.Models.ViewModel.ConsumoDiarioUsuarioVM
 <div class="container-fluid mt-3">
-    <div class="row">
-        <div class="col-4 border">
-            <h3 class="text-uppercase text-primary">Datos Del Usuario</h3>
-            <h3>Email @ViewData["Email"]</h3>
-            <h3 >Nombre: @Model.Usuario.Nombre @Model.Usuario.Apellido</h3>
-            <h3>Peso: @Model.Usuario.Peso Kg.</h3>
-            <h3>Altura: @Model.Usuario.Altura Mts.</h3>
+    <div class="row align-items-center justify-content-around vh-100">
+        <div class="col-6 div-informacion-usuario rounded">
+            <h3 class="datos-usuario-titulo">Datos Del Usuario:</h3>
+            <hr />
+            <h3 class="datos-usuario-item">Email: @ViewData["Email"]</h3>
+            <h3 class ="datos-usuario-item">Nombre: @Model.Usuario.Nombre @Model.Usuario.Apellido</h3>
+            <h3 class="datos-usuario-item">Peso: @Model.Usuario.Peso Kg.</h3>
+            <h3 class="datos-usuario-item">Altura: @Model.Usuario.Altura Mts.</h3>
+            <div class="row">
+                <div class="d-flex justify-content-end mb-3">
+                    <div>
+                        <a asp-controller="Home" asp-action="CerrarSesion" class="button-rojo text-decoration-none text-white"><i class="bi bi-box-arrow-left"></i> Cerrar Sesion </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-5 offset-5">
+        <div class="col-6 
+">
             <h4 class="text-primary text-uppercase">Historial de días</h4>
             <table id="tblConsumo" class="table table-responsive table-bordered">
                 <thead>
@@ -22,7 +31,6 @@
                 @foreach(var item in Model.ListaConsumo)
                 {
                         <tr>
-                            <td>@item.ConsumoDiario_Id</td>
                             <td>@item.Fecha.ToString("d")</td>
                             <td>@item.CaloriasTotales</td>
                             <td>
@@ -33,14 +41,14 @@
                 }                                   
                 </tbody>
             </table>
+            <div class="row">
+                <a asp-controller="ConsumoDiarios" asp-action="ConsumoDelDia" asp-route-id="@Model.Usuario.Usuario_Id" class="button-iniciarRegistro text-center text-decoration-none text-white"> Comenzar nuevo dia</a>
+            </div>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-4 m-3">
-        <a asp-controller="ConsumoDiarios" asp-action="ConsumoDelDia" asp-route-id="@Model.Usuario.Usuario_Id" class="btn btn-success"> Comenzar nuevo dia</a>
-    </div>
-</div>
+
+
 
 
 @*@section Scripts{

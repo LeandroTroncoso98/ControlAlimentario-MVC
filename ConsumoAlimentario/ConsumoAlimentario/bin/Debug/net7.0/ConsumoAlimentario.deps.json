@@ -2528,6 +2528,9 @@
         }
       },
       "ConsumoAlimentario.Utilidad/1.0.0": {
+        "dependencies": {
+          "ConsumoAlimentario.Models": "1.0.0"
+        },
         "runtime": {
           "ConsumoAlimentario.Utilidad.dll": {}
         }

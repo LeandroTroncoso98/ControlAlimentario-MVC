@@ -3,6 +3,7 @@
     --VerdeClaro: #959940;
     --Naranja: #F0C987;
     --Gris: #F6F7EB;
+    --rojo: #B63E52;
     --Blanco: #FFFFFF;
     --Negro: #3C3C3C;
     --FuentePrincipal: 'Alegreya Sans SC', sans-serif;
@@ -19,8 +20,8 @@ html {
 }
 
 body {
-
     background-image: url('../imagenes/consumo diario .net.png');
+    background-attachment: fixed;
 }
 
 .TituloRegistro {
@@ -77,6 +78,7 @@ body {
     font-weight: 900;
     font-size: 1.8rem;
     Letter-spacing: .3rem;
+    text-align:center;
 }
     .button-iniciarRegistro-Regresar:hover {
         color: var(--Blanco);
@@ -103,3 +105,51 @@ body {
 .TienesCuenta a:hover{
     color:var(--verdeOscuro);
 }
+
+.body-registrado{
+    background-image:url('../Imagenes/FondoLogueado.png');
+    background-attachment:fixed;
+}
+
+.div-informacion-usuario {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 500px;
+    height: auto;
+}
+
+.datos-usuario-titulo {
+    font-family: var(--FuentePrincipal);
+    font-size:3rem;
+    line-height: 2;
+    font-weight: 900;
+    color: var(--VerdeClaro);
+    text-align:center;
+}
+.datos-usuario-item {
+    font-family: var(--FuenteSecundaria);
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--Negro);
+}
+.button-rojo {
+    position: relative;
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    background: var(--rojo);
+    color: var(--Blanco);
+    cursor: pointer;
+    transition: .5s;
+    width: 30rem;
+    font-family: var(--FuentePrincipal);
+    font-weight: 900;
+    font-size: 1.8rem;
+    Letter-spacing: .3rem;
+    text-align: center;
+}
+
+
+    .button-rojo:hover {
+        color: var(--Blanco);
+        background: #D07685;
+    }
