@@ -62,15 +62,20 @@ namespace ConsumoAlimentario.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
-        public IActionResult AdministrarConsumoDiario(int id)
+        public IActionResult AdministrarConsumoDiario(int id,int pagina = 1)
         {
+            var cantidadRegistrosPorPagina = 5;
             ConsumoDiarioAlimentoVM consumoDiarioAlimentoVM = new ConsumoDiarioAlimentoVM()
             {
                 ConsumoDiario = _consumoDiarioRepository.Get(id),
             };
             if (consumoDiarioAlimentoVM.ConsumoDiario == null)
-                return NotFound();
-            consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos = _alimentoCargadoRepository.GetListAlimentoCargadoFromId(id);
+                return NotFound();           
+            consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos = _alimentoCargadoRepository.GetListAlimentoCargadoFromId(pagina,cantidadRegistrosPorPagina,id);
+            consumoDiarioAlimentoVM.PaginaActual = pagina;
+            consumoDiarioAlimentoVM.RegistrosPorPagina = cantidadRegistrosPorPagina;
+            consumoDiarioAlimentoVM.TotalRegistros = consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos.Count();
+
             consumoDiarioAlimentoVM.ObjetivoDiario = _objetivoDiarioRepository.GetObjetivo(consumoDiarioAlimentoVM.ConsumoDiario.Usuario_Id);
             if (consumoDiarioAlimentoVM.ObjetivoDiario == null)
             {

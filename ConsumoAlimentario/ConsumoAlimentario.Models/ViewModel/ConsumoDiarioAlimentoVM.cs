@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsumoAlimentario.Models.ViewModel
 {
-    public class ConsumoDiarioAlimentoVM
+    public class ConsumoDiarioAlimentoVM : BasePaginacion
     {
         public ConsumoDiario ConsumoDiario { get; set; }
         public IEnumerable<SelectListItem> Alimentos { get; set; }

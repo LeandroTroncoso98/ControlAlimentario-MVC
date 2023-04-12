@@ -9,8 +9,12 @@
         <div class="col-6">
             <h2 class="text-center text-uppercase">Lista de alimentos base</h2>
         </div>
-        <div class="col-6 d-flex justify-content-end">
+        <div class="col-6 offset-6 d-flex justify-content-end gap-2">
             <a asp-action="Crear" class="btn btn-success mb-5">Crear Alimento</a>
+            <div>
+                <a asp-action="Index" asp-controller="ConsumoDiarios" class="btn btn-danger">Volver a Inicio</a>
+
+            </div>
         </div>
     </div>
 </div>

@@ -3,7 +3,9 @@
     ViewData["Title"] = "AdministrarConsumoDiario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@{
+    var cantidadPaginas = (int)Math.Ceiling((double)Model.TotalRegistros / Model.RegistrosPorPagina);
+}
 
 <div class="container">
     <div class="row">
@@ -52,6 +54,24 @@
                         {
                             <p class="text-warning text-center">No posee alimentos cargados.</p>
                         }
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="d-flex justify-content-around">
+                                    @if (Model.PaginaActual == 1)
+                                    {
+                                        @Html.ActionLink("Anterior",null,new{pagina = 1},new { @class = "btn btn-info text-white"})
+                                        @Html.ActionLink("Siguiente",null, new{pagina = Model.PaginaActual+1},new { @class = "btn btn-info text-white"})
+
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Anterior",null,new {pagina = Model.PaginaActual - 1},new { @class = "btn btn-info text-white"})
+                                        @Html.ActionLink("Siguiente",null,new{pagina = Model.PaginaActual + 1},new { @class = "btn btn-info text-white"})
+
+                                    }                                                                      
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,12 +178,12 @@
                     <div class="row">
                         <div class="col d-flex justify-content-around align-items-center gap-2">
                             <h6 class="text-center labelIniciarRegistro ">
-                                <i class="bi bi-search"></i> 
+                                <i class="bi bi-search"></i>
                                 @ViewData["ObjetivoDiarioVacio"]
                             </h6>
                             <a asp-controller="ObjetivoDiarios" asp-action="NuevoObjetivo" asp-route-id="@Model.ConsumoDiario.Usuario_Id" class="button-verde text-decoration-none text-center text-white">Definir Objetivo</a>
                         </div>
-                    </div> 
+                    </div>
                 }
 
             </div>

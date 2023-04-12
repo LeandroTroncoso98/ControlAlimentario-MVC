@@ -51,7 +51,7 @@
                             <td>@item.Fecha.ToString("d")</td>
                             <td>@item.CaloriasTotales</td>
                             <td>
-                                <a asp-action="AdministrarConsumoDiario" asp-controller="ConsumoDiarios" asp-route-id="@item.ConsumoDiario_Id" class="btn btn-outline-primary">Administrar</a>
+                                <a asp-action="AdministrarConsumoDiario" asp-controller="ConsumoDiarios" asp-route-id="@item.ConsumoDiario_Id" asp-route-pagina="1" class="btn btn-outline-primary">Administrar</a>
                                 <a asp-action="Delete" asp-controller="ConsumoDiarios" asp-route-id="@item.ConsumoDiario_Id" class="btn-danger btn">Borrar</a>
                             </td>
                         </tr>

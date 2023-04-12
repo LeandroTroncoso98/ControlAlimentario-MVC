@@ -46,10 +46,16 @@ namespace ConsumoAlimentario.AccesoDatos.Repository
             double resultado = (cantidadPeso * valorBase) / cantidadBase;
             return Math.Round(resultado,2);
         }
-        public List<AlimentoCargado> GetListAlimentoCargadoFromId(int id)
+        public List<AlimentoCargado> GetListAlimentoCargadoFromId(int pagina, int cantidadDeRegistrosPorPaginas, int id)
         {
-            List<AlimentoCargado> lista = _context.AlimentoCargado.Where(m=> m.ConsumoDiario_Id == id).ToList();
-            return lista;
+            //List<AlimentoCargado> lista = _context.AlimentoCargado.Where(m=> m.ConsumoDiario_Id == id).ToList();
+            //return lista;
+            var alimentosCargados = _context.AlimentoCargado.OrderBy(a => a.AlimentoCargado_Id)
+                .Where(a => a.ConsumoDiario_Id == id)
+                .Skip((pagina - 1) * cantidadDeRegistrosPorPaginas)
+                .Take(cantidadDeRegistrosPorPaginas).ToList();
+            return alimentosCargados;
         }
+        
     }
 }
