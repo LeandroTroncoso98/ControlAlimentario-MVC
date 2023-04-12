@@ -62,10 +62,10 @@
                 <div class="col-12 mt-5">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <a href="@Url.Action("Cargar", "CargarAlimentos", new { id = Model.ConsumoDiario.ConsumoDiario_Id})" class="button-iniciarRegistro text-center text-white text-decoration-none" role="button">Cargar alimento</a>
+                            <a href="@Url.Action("Cargar", "CargarAlimentos", new { id = Model.ConsumoDiario.ConsumoDiario_Id})" class="button-verde text-center text-white text-decoration-none" role="button">Cargar alimento</a>
                         </div>
                         <div>
-                            <a asp-action="Index" class="button-iniciarRegistro-Regresar text-center text-decoration-none"><i class="bi bi-backspace"></i> Volver</a>
+                            <a asp-action="Index" class="button-naranja text-center text-decoration-none"><i class="bi bi-backspace"></i> Volver</a>
                         </div>
                         <div>
                             <a asp-controller="Home" asp-action="CerrarSesion" class="button-rojo text-decoration-none text-white">Cerrar Sesion </a>
@@ -78,78 +78,93 @@
                 <div class="text-center">
                     <h3 class="TituloRegistro text-center">Metas del día:</h3>
                 </div>
-                <div class="row mt-2">
-                    <h6>Calorias:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CaloriasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CaloriasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.CaloriasPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Carbohidratos:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CarbohidratosPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CarbohidratosPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.CarbohidratosPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Proteinas:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.ProteinasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.ProteinasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.ProteinasPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Grasas Totales:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.GrasasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.GrasasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.GrasasPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Sodio:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.SodioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.SodioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.SodioPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Potasio:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.PotasioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.PotasioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.PotasioPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Fibras:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.FibrasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.FibrasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.FibrasPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Azucares:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.AzucarPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.AzucarPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.AzucarPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Vitamina A:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.VitaminaAPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.VitaminaAPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.VitaminaAPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Vitamina C:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.VitaminaCPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.VitaminaCPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.VitaminaCPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Calcio:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CalcioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CalcioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.CalcioPorcentual%</div>
-                </div>
-                <div class="row mt-2">
-                    <h6>Hierro:</h6>
-                </div>
-                <div class="progress" style="height:2rem;">
-                    <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.HierroPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.HierroPorcentual)" aria-valuemin="0" aria-valuemax="100">@Model.PorcentualObjetivoDiario.HierroPorcentual%</div>
-                </div>
+                @if (Model.PorcentualObjetivoDiario != null)
+                {
+                    <div class="row mt-2">
+                        <h6>Calorias:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CaloriasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CaloriasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.CaloriasPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Carbohidratos:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CarbohidratosPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CarbohidratosPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.CarbohidratosPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Proteinas:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.ProteinasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.ProteinasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.ProteinasPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Grasas Totales:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.GrasasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.GrasasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.GrasasPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Sodio:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.SodioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.SodioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.SodioPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Potasio:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.PotasioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.PotasioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.PotasioPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Fibras:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.FibrasPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.FibrasPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.FibrasPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Azucares:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.AzucarPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.AzucarPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.AzucarPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Vitamina A:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.VitaminaAPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.VitaminaAPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.VitaminaAPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Vitamina C:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.VitaminaCPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.VitaminaCPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.VitaminaCPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Calcio:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.CalcioPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.CalcioPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.CalcioPorcentual,2)%</div>
+                    </div>
+                    <div class="row mt-2">
+                        <h6>Hierro:</h6>
+                    </div>
+                    <div class="progress" style="height:2rem;">
+                        <div class="progress-bar  bg-warning" role="progressbar" style="width: @(Math.Round(Model.PorcentualObjetivoDiario.HierroPorcentual,0))% " aria-valuenow="@(Model.PorcentualObjetivoDiario.HierroPorcentual)" aria-valuemin="0" aria-valuemax="100">@Math.Round(Model.PorcentualObjetivoDiario.HierroPorcentual,2)%</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col d-flex justify-content-around align-items-center gap-2">
+                            <h6 class="text-center labelIniciarRegistro ">
+                                <i class="bi bi-search"></i> 
+                                @ViewData["ObjetivoDiarioVacio"]
+                            </h6>
+                            <a asp-controller="ObjetivoDiarios" asp-action="NuevoObjetivo" asp-route-id="@Model.ConsumoDiario.Usuario_Id" class="button-verde text-decoration-none text-center text-white">Definir Objetivo</a>
+                        </div>
+                    </div> 
+                }
 
             </div>
         </div>

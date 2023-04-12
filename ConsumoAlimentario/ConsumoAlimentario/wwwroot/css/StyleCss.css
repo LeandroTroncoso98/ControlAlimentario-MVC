@@ -44,7 +44,7 @@ body {
     color:var(--Negro);
 }
 
-.button-iniciarRegistro {
+.button-verde {
     position: relative;
     padding: 1rem 1.5rem;
     border: none;
@@ -61,10 +61,10 @@ body {
     
 }
 
-    .button-iniciarRegistro:hover {
+    .button-verde:hover {
         background: var(--verdeOscuro);
     }
-.button-iniciarRegistro-Regresar {
+.button-naranja {
     position: relative;
     padding: 1rem 1.5rem;
     border: none;
@@ -80,7 +80,7 @@ body {
     Letter-spacing: .3rem;
     text-align:center;
 }
-    .button-iniciarRegistro-Regresar:hover {
+    .button-naranja:hover {
         color: var(--Blanco);
         background: #E6A637;
     }
@@ -113,7 +113,7 @@ body {
 
 .div-informacion-usuario {
     background-color: rgba(255, 255, 255, 0.7);
-    width: 500px;
+    width: 70rem;
     height: auto;
 }
 

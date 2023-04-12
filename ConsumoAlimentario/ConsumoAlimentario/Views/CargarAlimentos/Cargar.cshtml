@@ -7,13 +7,13 @@
 <form method="post" asp-action="Cargar" asp-controller="CargarAlimentos">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <input type="hidden" asp-for="AlimentoCargado.ConsumoDiario_Id" value="@(ViewBag.Data)"/>
+    <input type="hidden" asp-for="AlimentoCargado.ConsumoDiario_Id" value="@(ViewBag.Data)" />
     <div class="container">
-        <div class="row ">
-            <div class="col-6 offset-3 border p-2">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-6 offset-3 div-informacion-usuario rounded p-2">
                 <div class="row">
                     <div class="col">
-                        <h6 class="text-uppercase text-center mt-5">Cargar alimento</h6>
+                        <h6 class="labelIniciarRegistro text-center mt-5">Cargar alimento</h6>
                     </div>
                 </div>
                 <hr />
@@ -35,8 +35,12 @@
                     </div>
                 </div>
                 <div class="row mt-3 ">
-                    <div class="col d-flex justify-content-end">
-                        <button type="submit" class="btn btn-success">Agregar</button>
+                    <div class="col d-flex justify-content-around">
+                        
+                            <button type="submit" class="button-verde">Agregar</button>
+                        
+                            <a asp-action="AdministrarConsumoDiario" asp-controller="ConsumoDiarios" asp-route-id="@Model.ConsumoDiario.ConsumoDiario_Id" class="button-rojo text-decoration-none">Volver</a>
+                       
                     </div>
                 </div>
             </div>

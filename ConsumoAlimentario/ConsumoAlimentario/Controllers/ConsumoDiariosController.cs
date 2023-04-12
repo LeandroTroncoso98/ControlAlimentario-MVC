@@ -66,12 +66,17 @@ namespace ConsumoAlimentario.Controllers
         {
             ConsumoDiarioAlimentoVM consumoDiarioAlimentoVM = new ConsumoDiarioAlimentoVM()
             {
-                ConsumoDiario = _consumoDiarioRepository.Get(id)                
+                ConsumoDiario = _consumoDiarioRepository.Get(id),
             };
             if (consumoDiarioAlimentoVM.ConsumoDiario == null)
                 return NotFound();
             consumoDiarioAlimentoVM.ConsumoDiario.ListaAlimentos = _alimentoCargadoRepository.GetListAlimentoCargadoFromId(id);
             consumoDiarioAlimentoVM.ObjetivoDiario = _objetivoDiarioRepository.GetObjetivo(consumoDiarioAlimentoVM.ConsumoDiario.Usuario_Id);
+            if (consumoDiarioAlimentoVM.ObjetivoDiario == null)
+            {
+                ViewData["ObjetivoDiarioVacio"] = "Usted no posee objetivo.";
+                return View(consumoDiarioAlimentoVM);
+            }
             CalcularPorcentual calcularPorcentual = new CalcularPorcentual();
             consumoDiarioAlimentoVM.PorcentualObjetivoDiario = calcularPorcentual.Calcular(consumoDiarioAlimentoVM.ObjetivoDiario, consumoDiarioAlimentoVM.ConsumoDiario);
             return View(consumoDiarioAlimentoVM);

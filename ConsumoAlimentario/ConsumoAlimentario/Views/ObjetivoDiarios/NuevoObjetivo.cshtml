@@ -1,0 +1,131 @@
+﻿@model ConsumoAlimentario.Models.ObjetivoDiario
+@{
+    ViewData["Title"] = "NuevoObjetivo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <form method="post" action="NuevoObjetivo">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="Usuario_Id" value="@ViewData["IDFromUser"]" hidden="hidden" />
+        <div class="row d-flex justify-content-center align-items-center vh-100">
+            <div class="col-6 div-informacion-usuario p-3">
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="CaloriasObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="CaloriasObjetivo" class="input-style" />
+                        <span asp-validation-for="CaloriasObjetivo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="CarbohidratosObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="CarbohidratosObjetivo" class="input-style" />
+                        <span asp-validation-for="CarbohidratosObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="ProteinasObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="ProteinasObjetivo" class="input-style" />
+                        <span asp-validation-for="ProteinasObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="GrasasObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="GrasasObjetivo" class="input-style" />
+                        <span asp-validation-for="GrasasObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="SodioObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="SodioObjetivo" class="input-style" />
+                        <span asp-validation-for="SodioObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="PotasioObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="PotasioObjetivo" class="input-style" />
+                        <span asp-validation-for="PotasioObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="FibrasObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="FibrasObjetivo" class="input-style" />
+                        <span asp-validation-for="FibrasObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="AzucarObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="AzucarObjetivo" class="input-style" />
+                        <span asp-validation-for="AzucarObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="VitaminaAObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="VitaminaAObjetivo" class="input-style" />
+                        <span asp-validation-for="VitaminaAObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="VitaminaCObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="VitaminaCObjetivo" class="input-style" />
+                        <span asp-validation-for="VitaminaAObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="CalcioObjetivo" class="labelIniciarRegistro"></label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="CalcioObjetivo" class="input-style" />
+                        <span asp-validation-for="CalcioObjetivo" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-end gap-2">
+                        <button type="submit" class="button-verde">Crear Objetivo</button>
+                        <a asp-action="Index" asp-controller="ConsumoDiarios" class="text-decoration-none text-center text-white button-rojo" asp-route-id="@ViewData["IDFromUser"]">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -13,6 +13,7 @@ namespace ConsumoAlimentario.AccesoDatos.Repository.IRepository
         Usuario SaveUsuario(Usuario usuario);
         bool ExisteUsuario(string emial);
         Usuario GetForEmail(string email);
+       
 
     }
 }
